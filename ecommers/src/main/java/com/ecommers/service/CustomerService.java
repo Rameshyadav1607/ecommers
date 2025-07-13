@@ -7,6 +7,7 @@ import com.ecommers.model.Users;
 import com.ecommers.repository.CustomerRepository;
 import com.ecommers.repository.UsersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,6 +18,8 @@ public class CustomerService {
    private CustomerRepository customerRepository;
     @Autowired
     private UsersRepository usersRepository;
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     public String createAccount(CustomerDomain customerDomain){
 
@@ -28,6 +31,12 @@ public class CustomerService {
             users.setUserRole("customer");
             users.setActive(true);
             users.setMobileNumber(customerDomain.getUserdomain().getMobileNumber());
+          if(customerDomain.getUserdomain().getPassword().equals(customerDomain.getUserdomain().getConformPassword())){
+                      users.setPassword(passwordEncoder.encode(customerDomain.getUserdomain().getPassword()));
+          }
+          else{
+              return  "incorrect  conform password";
+          }
 
             Customer customer = new Customer();
             customer.setFirstname(customerDomain.getFirstname());

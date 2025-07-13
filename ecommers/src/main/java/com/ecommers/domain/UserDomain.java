@@ -8,5 +8,7 @@ public class UserDomain {
     private String username;
     private String email;
     private String mobileNumber;
+    private String password;
+    private String conformPassword;
 
 }

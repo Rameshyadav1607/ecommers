@@ -28,7 +28,9 @@ public class Users  implements java.io.Serializable {
      private String mobileNumber;
      private String userRole;
      private Boolean active;
+     private String password;
      private Customer customers;
+
 
     public Users() {
     }
@@ -120,6 +122,14 @@ public class Users  implements java.io.Serializable {
     }
 
 
+    @Column(name = "password")
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }
 
 
