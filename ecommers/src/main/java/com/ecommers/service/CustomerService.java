@@ -46,7 +46,9 @@ public class CustomerService {
 
     public List<CustomerInfoDomain> getAllCustomersDetails() {
 
+       List<CustomerInfoDomain> customer=customerRepository.getAllCustomersDetails();
 
-        return  null;
+
+        return  customer;
     }
 }

@@ -7,5 +7,6 @@ import lombok.Setter;
 @Getter
 public class LoginDomain {
 
-    
+    private  String emailIdOrPhoneNumner;
+    private String  password;
 }
