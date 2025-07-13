@@ -22,7 +22,7 @@ import jakarta.persistence.UniqueConstraint;
 public class Users  implements java.io.Serializable {
 
 
-     private int userId;
+     private Integer userId;
      private String username;
      private String email;
      private String mobileNumber;
@@ -34,12 +34,12 @@ public class Users  implements java.io.Serializable {
     }
 
 	
-    public Users(int userId, String username, String mobileNumber) {
+    public Users(Integer userId, String username, String mobileNumber) {
         this.userId = userId;
         this.username = username;
         this.mobileNumber = mobileNumber;
     }
-    public Users(int userId, String username, String email, String mobileNumber, String userRole, Boolean active,Customer customers) {
+    public Users(Integer userId, String username, String email, String mobileNumber, String userRole, Boolean active,Customer customers) {
        this.userId = userId;
        this.username = username;
        this.email = email;
@@ -52,11 +52,11 @@ public class Users  implements java.io.Serializable {
      @Id
      @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="user_id", unique=true, nullable=false)
-    public int getUserId() {
+    public Integer getUserId() {
         return this.userId;
     }
     
-    public void setUserId(int userId) {
+    public void setUserId(Integer userId) {
         this.userId = userId;
     }
 

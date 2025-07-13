@@ -1,12 +1,15 @@
 package com.ecommers.service;
 
 import com.ecommers.domain.CustomerDomain;
+import com.ecommers.domain.CustomerInfoDomain;
 import com.ecommers.model.Customer;
 import com.ecommers.model.Users;
 import com.ecommers.repository.CustomerRepository;
 import com.ecommers.repository.UsersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class CustomerService {
@@ -40,4 +43,10 @@ public class CustomerService {
         }
 
    }
+
+    public List<CustomerInfoDomain> getAllCustomersDetails() {
+
+
+        return  null;
+    }
 }

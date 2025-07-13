@@ -24,11 +24,11 @@ import java.util.Set;
  */
 @Entity
 @Table(name="customer"
-    , uniqueConstraints = @UniqueConstraint(columnNames="user_id") 
+    , uniqueConstraints = @UniqueConstraint(columnNames="user_id")
 )
 public class Customer  implements java.io.Serializable {
 
-     private int customerId;
+     private Integer customerId;
      private Users users;
      private String firstname;
      private String lastname;
@@ -39,11 +39,11 @@ public class Customer  implements java.io.Serializable {
     }
 
 	
-    public Customer(int customerId, Users users) {
+    public Customer(Integer customerId, Users users) {
         this.customerId = customerId;
         this.users = users;
     }
-    public Customer(int customerId, Users users, String firstname, String lastname, Set orderses, Set deliveryAddresses) {
+    public Customer(Integer customerId, Users users, String firstname, String lastname, Set orderses, Set deliveryAddresses) {
        this.customerId = customerId;
        this.users = users;
        this.firstname = firstname;
@@ -56,7 +56,7 @@ public class Customer  implements java.io.Serializable {
 
      @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="customer_id", unique=true, nullable=false)
-    public int getCustomerId() {
+    public Integer getCustomerId() {
         return this.customerId;
     }
     
