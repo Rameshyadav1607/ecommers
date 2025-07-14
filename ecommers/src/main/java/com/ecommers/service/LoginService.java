@@ -30,8 +30,12 @@ public class LoginService {
         loginResponseDomain.setToken(token);
         loginResponseDomain.setUsername(user.getUsername());
         loginResponseDomain.setUserRole(user.getUserRole());
+        loginResponseDomain.setMobileNumber(user.getMobileNumber());
         loginResponseDomain.setEmail(user.getEmail());
 
         return loginResponseDomain;
     }
+
+
+
 }
