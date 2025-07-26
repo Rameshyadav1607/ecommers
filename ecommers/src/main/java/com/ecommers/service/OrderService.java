@@ -29,7 +29,19 @@ public class OrderService {
     private final OrdersRepository ordersRepository;
     private final OrderItemsRepository orderItemsRepository;
 
-    public OrderService(DeliveryAddressRepository deliveryAddressRepository, ProductRepository productRepository, OrdersRepository ordersRepository, OrderItemsRepository orderItemsRepository) {
+//    public OrderService(DeliveryAddressRepository deliveryAddressRepository, ProductRepository productRepository, OrdersRepository ordersRepository, OrderItemsRepository orderItemsRepository) {
+//        this.deliveryAddressRepository = deliveryAddressRepository;
+//        this.productRepository = productRepository;
+//        this.ordersRepository = ordersRepository;
+//        this.orderItemsRepository = orderItemsRepository;
+//    }
+
+    public OrderService(CustomerRepository customerRepository,
+                        DeliveryAddressRepository deliveryAddressRepository,
+                        ProductRepository productRepository,
+                        OrdersRepository ordersRepository,
+                        OrderItemsRepository orderItemsRepository) {
+        this.customerRepository = customerRepository;
         this.deliveryAddressRepository = deliveryAddressRepository;
         this.productRepository = productRepository;
         this.ordersRepository = ordersRepository;
