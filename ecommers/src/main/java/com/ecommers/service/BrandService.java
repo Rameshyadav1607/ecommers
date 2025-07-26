@@ -25,16 +25,18 @@ public class BrandService {
         if (brand != null) {
             BeanUtils.copyProperties(brandDomain, brand, "brandId", "createdDate","updatedDate");
             brand.setupdatedDate(LocalDateTime.now());
+            System.out.println("brand  updated");
         } else {
             brand = new Brand();
             brand.setBrandName(brandDomain.getBrandName());
             brand.setDescription(brandDomain.getDescription());
             brand.setcreatedDate(LocalDateTime.now());
+            System.out.println("brand saved");
         }
 
         brandRepository.save(brand);
 
-        System.out.println("brand saved");
+
 
     }
 
@@ -69,4 +71,6 @@ public class BrandService {
 
             return   brandRepository.findAllBrandNames();
     }
+
+
 }
