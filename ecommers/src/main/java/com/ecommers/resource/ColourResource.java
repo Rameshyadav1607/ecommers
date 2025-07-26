@@ -1,5 +1,6 @@
 package com.ecommers.resource;
 
+import com.ecommers.model.Colour;
 import com.ecommers.service.ColourService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,9 +22,14 @@ public class ColourResource {
         return colourService.saveOrUpdateColour(colourName);
 
     }
-    @GetMapping("/all")
+    @GetMapping("/ColourNames")
     public List<String> getColourNames(){
        return colourService.getColourNames();
+    }
+
+    @GetMapping("/all")
+    public List<Colour>   getAllColour(){
+      return   colourService.getAllColour();
     }
 
 }

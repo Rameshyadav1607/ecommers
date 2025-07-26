@@ -20,14 +20,20 @@ public class ColourService {
         if(colour == null){
             colour=new Colour();
             colour.setColourName(colourName);
+            return "colour is saved";
         }
         colour.setColourName(colourName);
         colourRepository.save(colour);
-        return "colour is saved or updated";
+        return "colour  updated";
     }
 
     public List<String> getColourNames() {
           List<String>  colours=colourRepository.findByColourNames();
         return colours;
+    }
+
+    public List<Colour> getAllColour(){
+        List<Colour> colourList = colourRepository.findAll();
+        return colourList;
     }
 }
